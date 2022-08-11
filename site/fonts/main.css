@@ -1,0 +1,6 @@
+@import url("I.font/I.font.css");
+
+@font-face {
+    font-family: Huninn;
+    src: url(jf-openhuninn.ttf) format('truetype');
+}

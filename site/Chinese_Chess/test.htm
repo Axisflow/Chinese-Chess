@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-tw" style="width: 100%; height: 100%; background-image: url('bg.jpg'); background-size: cover; background-position: center;">
+    <head>
+        <meta charset="utf-8" />
+        <title>測試</title>
+    </head>
+    <body style="margin: 0;width: 100%; height: 100%;">
+        <main style="width: 100%; height: 100%;">
+            <div style="width: 100%; height: 100%;">
+                <div id="chessboard" style="backdrop-filter: blur(5px);"></div>
+            </div>
+        </main>
+        <script>
+            window.onresize = function () { sizeChessBoard(); };
+
+            function sizeChessBoard() {
+                let w = document.getElementsByTagName('main')[0].clientWidth;
+                let h = document.getElementsByTagName('main')[0].clientHeight;
+
+                let board_w = 5154;
+                let board_h = 5671;
+
+                if (w > h) {
+                    document.getElementById('chessboard').style.height = h + 'px';
+                    document.getElementById('chessboard').style.width = h * board_w / board_h + 'px';
+                } else {
+                    document.getElementById('chessboard').style.height = w * board_h / board_w + 'px';
+                    document.getElementById('chessboard').style.width = w + 'px';
+                }
+            }
+            
+            sizeChessBoard();
+        </script>
+    </body>
+</html>
